@@ -168,6 +168,10 @@ ACCOUNT_EMAIL_SUBJECT_PREFIX=''
 LOGIN_REDIRECT_URL = 'home'
 ACCOUNT_LOGIN_REDIRECT_URL = 'home'
 ACCOUNT_LOGOUT_REDIRECT_URL = 'account_login'
+# AllAuth settings
+ACCOUNT_PASSWORD_CHANGE_REDIRECT_URL = 'account_login'  # 修改密碼後重定向到登錄頁面
+ACCOUNT_LOGOUT_ON_PASSWORD_CHANGE = True  # 修改密碼後自動登出
+
 
 # Provider specific settings
 SOCIALACCOUNT_PROVIDERS = {

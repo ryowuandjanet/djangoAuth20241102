@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      {% block title %}
+        My Site
+      {% endblock %}
+    </title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    {% block extra_head %}
+    {% endblock %}
+  </head>
+  <body>
+    <!-- 導航列 -->
+    <nav class="navbar bg-base-100 shadow-lg mb-4">
+      <div class="container mx-auto">
+        <div class="flex-1">
+          <a href="{% url 'home' %}" class="text-xl font-bold">My Site</a>
+        </div>
+        <div class="flex-none">
+          {% if user.is_authenticated %}
+            <div class="dropdown dropdown-end">
+              <label tabindex="0" class="btn btn-ghost">
+                <span class="mr-2">{{ user.username }}</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </label>
+              <ul tabindex="0" class="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-52 mt-4">
+                <li>
+                  <a href="{% url 'account_change_password' %}">Reset Password</a>
+                </li>
+                <li>
+                  <a href="{% url 'account_logout' %}">Logout</a>
+                </li>
+              </ul>
+            </div>
+          {% else %}
+            <a href="{% url 'account_login' %}" class="btn btn-primary">Login</a>
+          {% endif %}
+        </div>
+      </div>
+    </nav>
+
+    {% block content %}
+
+    {% endblock %}
+
+    {% block extra_body %}
+
+    {% endblock %}
+  </body>
+</html>
