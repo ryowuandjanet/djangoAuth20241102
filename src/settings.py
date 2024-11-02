@@ -186,7 +186,11 @@ SOCIALACCOUNT_PROVIDERS = {
         'SCOPE': [
             'read:user',
             'user:email',
-        ]
+        ],
+        'CALLBACK_URLS': [
+            'https://djangoauth20241102.onrender.com/accounts/github/login/callback/',
+            'http://localhost:3000/accounts/github/login/callback/',
+        ],
     }
 }
 
