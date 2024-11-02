@@ -11,8 +11,10 @@ django-allauth-ui==1.5.1
 django-cloudinary-storage==0.3.0
 django-environ==0.11.2
 django-widget-tweaks==1.5.0
+gunicorn==23.0.0
 idna==3.10
 oauthlib==3.2.2
+packaging==24.1
 psycopg2-binary==2.9.10
 pycparser==2.22
 PyJWT==2.9.0
@@ -24,5 +26,6 @@ slippers==0.6.2
 sqlparse==0.5.1
 typeguard==2.13.3
 typing_extensions==4.12.2
+tzdata==2024.2
 urllib3==2.2.3
 whitenoise==6.8.2

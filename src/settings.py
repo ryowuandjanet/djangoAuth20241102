@@ -15,7 +15,8 @@ if ENVIRONMENT == 'development':
 else:
     DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*','https://djangoauth20241102.onrender.com']
+CSRF_TRUSTED_ORIGINS = ['https://djangoauth20241102.onrender.com']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
