@@ -33,7 +33,6 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.github',
     'allauth.socialaccount.providers.google',
-    'corsheaders',  
     "widget_tweaks",
     "slippers",
 ]
@@ -187,12 +186,7 @@ SOCIALACCOUNT_PROVIDERS = {
         'SCOPE': [
             'read:user',
             'user:email',
-        ],
-        # 設定 callback URLs
-        'CALLBACK_URLS': [
-            'https://djangoauth20241102.onrender.com/accounts/github/login/callback/',
-            'http://localhost:3000/accounts/github/login/callback/',
-        ],
+        ]
     }
 }
 
